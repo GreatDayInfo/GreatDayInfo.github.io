@@ -73,9 +73,9 @@
         <div class="item">
           <span class="text">循环模式</span>
           <el-radio-group v-model="playerLoop" size="small" text-color="#FFFFFF">
-            <el-radio label="all" border>列表</el-radio>
-            <el-radio label="one" border>单曲</el-radio>
-            <el-radio label="none" border>不循环</el-radio>
+            <el-radio value="all" border>列表</el-radio>
+            <el-radio value="one" border>单曲</el-radio>
+            <el-radio value="none" border>不循环</el-radio>
           </el-radio-group>
         </div>
       </el-collapse-item>
