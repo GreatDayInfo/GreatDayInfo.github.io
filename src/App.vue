@@ -107,7 +107,7 @@ onMounted(() => {
   const styleTitle1 = "font-size: 20px;font-weight: 600;color: rgb(244,167,89);";
   const styleTitle2 = "font-size:12px;color: rgb(244,167,89);";
   const styleContent = "color: rgb(30,152,255);";
-  const title1 = "夏之一周间 & 吾的天";
+  const title1 = "时代的二锅头&锅头的家";
   const title2 = `
               ii.                                         ;9ABH,          
              SA391,                                    .r9GG35&G          
