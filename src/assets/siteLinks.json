@@ -2,46 +2,16 @@
   {
     "icon": "Blog",
     "name": "博客",
-    "link": "https://notes.wudetian.top/"
-  },
-  {
-    "icon": "Compass",
-    "name": "起始页",
-    "link": "https://nav.imsyy.top/"
+    "link": "https://www.yuque.com/dashboard/"
   },
   {
     "icon": "Fire",
     "name": "今日热榜",
-    "link": "https://hot.imsyy.top/"
+    "link": "https://tophub.today/"
   },
   {
     "icon": "CompactDisc",
     "name": "MyFreeMP3",
     "link": "https://tool.liumingye.cn/music/#/"
-  },
-  {
-    "icon": "Compass",
-    "name": "旧版首页",
-    "link": "https://my.wudetian.top/"
-  },
-  {
-    "icon": "Book",
-    "name": "MUI模板",
-    "link": "http://mui.wudetian.top/"
-  },
-  {
-    "icon": "LaptopCode",
-    "name": "自助假条系统",
-    "link": "https://my.wudetian.top/ding"
-  },
-  {
-    "icon": "Cloud",
-    "name": "DIY仓库(待开放)",
-    "link": "https://wudetian.top/"
-  },
-  {
-    "icon": "Cloud",
-    "name": "待开发...",
-    "link": "https://wudetian.top/"
   }
 ]
