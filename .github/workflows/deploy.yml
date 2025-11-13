@@ -26,7 +26,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8 # 或你本地 pnpm 版本
+      - run: pnpm install
 
       - name: Build Vite project
         run: npm run build
