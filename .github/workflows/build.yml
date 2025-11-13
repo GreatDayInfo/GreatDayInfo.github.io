@@ -1,38 +1,47 @@
-# Dev 分支推送部署预览
-## 仅部署 Win 端
-name: Build Dev
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - dev
-      - main
+      - main  # 只要你推送到 main 分支，就会自动部署
+  workflow_dispatch: # 手动触发按钮
+
+permissions:
+  contents: write  # 允许推送到 gh-pages 分支
+  pages: write
+  id-token: write
 
 jobs:
-  release:
-    name: Build Website
-    runs-on: windows-latest
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
 
     steps:
-      # 检出 Git 仓库
-      - name: Check out git repository
-        uses: actions/checkout@v4.1.1
-      # 安装 Node.js
-      - name: Install Node.js
-        uses: actions/setup-node@v4.0.0
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "18.x"
-      # 安装项目依赖
-      - name: Install Dependencies
-        run: npm install
-      # 构建程序
-      - name: Build Website
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Build Vite project
         run: npm run build
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      # 上传构建产物
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+
+      # 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: Home
-          path: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
